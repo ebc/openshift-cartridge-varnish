@@ -8,7 +8,7 @@ License: BSD
 Vendor: Red Hat / Varnish
 Cartridge-Version: 0.1
 Cartridge-Vendor: community
-Source-Url: https://github.com/mmcgrath-openshift/openshift-cartridge-varnish.git
+Source-Url: https://github.com/ebc/openshift-cartridge-varnish.git
 Categories:
   - service
   - web_framework
@@ -32,18 +32,12 @@ Subscribes:
 Endpoints:
   - Private-IP-Name:   IP
     Private-Port-Name: PORT
-    Private-Port:      8080
+    Private-Port:      80
     Public-Port-Name:  PUBLIC_PORT
     Mappings:
       - Frontend:      ""
         Backend:       ""
         Options:       { websocket: true }
-      - Frontend:      "/health"
-        Backend:       ""
-        Options:       { health: false }
-  - Private-IP-Name:  ADMIN_IP
-    Private-Port-Name: ADMIN_PORT
-    Private-Port: 8080
 Scaling:
   Min: 1
   Max: -1
